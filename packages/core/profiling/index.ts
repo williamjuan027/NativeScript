@@ -2,6 +2,9 @@
 declare let __startCPUProfiler: any;
 declare let __stopCPUProfiler: any;
 
+// TODO: temp workaround for typedoc
+declare let org: any;
+
 export function uptime() {
 	return global.android ? (<any>org).nativescript.Process.getUpTime() : (<any>global).__tns_uptime();
 }

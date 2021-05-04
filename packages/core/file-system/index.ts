@@ -574,6 +574,8 @@ export namespace knownFolders {
 		return _app;
 	}
 
+	// TODO: temp workaround for typedoc
+	declare var NSSearchPathDirectory;
 	export namespace ios {
 		function _checkPlatform(knownFolderName: string) {
 			if (!global.isIOS) {

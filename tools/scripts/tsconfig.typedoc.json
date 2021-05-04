@@ -1,37 +1,44 @@
 {
-    "compilerOptions": {
-        "noEmitOnError": true,
-        "noEmitHelpers": true,
-        "target": "es5",
-        "module": "commonjs",
-        "declaration": false,
-        "noImplicitAny": false,
-        "noImplicitUseStrict": true,
-        "experimentalDecorators": true,
-        "lib": [
-            "es6",
-            "dom"
-        ]
-    },
-    "include": [
-        "nativescript-core/**/*.d.ts"
-    ],
-    "exclude": [
-        "nativescript-core/index.d.ts",
-        "nativescript-core/ui/index.d.ts",
-        "nativescript-core/ui/layouts/index.d.ts",
-        
-        "nativescript-core/references.d.ts",
-        "nativescript-core/node_modules",
-        "nativescript-core/ui/frame/transition-definitions.android.d.ts",
-        "nativescript-core/platforms/*"
-    ],
-    "typedocOptions": {
-        "out": "bin/dist/apiref",
-        "includeDeclarations": true,
-        "name": "NativeScript",
-        "theme": "./node_modules/nativescript-typedoc-theme",
-        "excludeExternals": true,
-        "externalPattern": "**/+(tns-core-modules|module).d.ts"
-    }
+	"compilerOptions": {
+		"noEmitOnError": true,
+		"noEmitHelpers": true,
+		"target": "es5",
+		"module": "commonjs",
+		"declaration": false,
+		"noImplicitAny": false,
+		"noImplicitUseStrict": true,
+		"experimentalDecorators": true,
+		"lib": ["es6", "dom"]
+	},
+	"files": ["../../packages/core"],
+	// "include": [
+	//     "../../packages/core/**/*.d.ts"
+	//     // "../../packages/core/core-types/index.d.ts"
+	// ],
+	// "exclude": [
+	//     // "../../node_modules/**/*.d.ts",
+	//     "**/node_modules/**",
+	//     // "../../node_modules",
+	//     // "../../packages/core/**/**/index.d.ts",
+	//     // "../../packages/core/**/**/index.ts",
+	//     // "../../packages/core/references.d.ts",
+	//     // "../../packages/core/node_modules",
+	//     "../../packages/core/ui/frame/transition-definitions.android.d.ts",
+	//     "../../packages/core/platforms/*"
+	// ],
+	"include": ["../../packages/core/**/*.d.ts"],
+	"exclude": [
+		// "packages/core/references.d.ts",
+		"../../node_modules",
+		"../../packages/core/node_modules"
+	],
+	"typedocOptions": {
+		"out": "bin/dist/apiref",
+		// "includeDeclarations": true,
+		"name": "NativeScript",
+		"theme": "./node_modules/nativescript-typedoc-theme",
+		"excludeExternals": true,
+		"externalPattern": "**/+(packages/core).d.ts"
+		// "externalPattern": "**/node_modules/**"
+	}
 }

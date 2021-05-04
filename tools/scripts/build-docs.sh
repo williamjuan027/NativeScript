@@ -27,21 +27,26 @@ extract_snippets() {
 
     npm install markdown-snippet-injector
 
-    for SNIPPET_DIR in {tests/app,apps/app,nativescript-core} ; do
-        echo "Extracting snippets from: $SNIPPET_DIR"
-        node "$BIN" --root="$SNIPPET_DIR" --target="$TARGET_DIR" \
-            --sourceext=".js|.ts|.xml|.html|.css"
-    done
+    # for SNIPPET_DIR in {tests/app,apps/app,nativescript-core} ; do
+    # for SNIPPET_DIR in {packages/core} ; do
+    #     echo "Extracting snippets from: $SNIPPET_DIR"
+    #     node "$BIN" --root="$SNIPPET_DIR" --target="$TARGET_DIR" \
+    #         --sourceext=".js|.ts|.xml|.html|.css"
+    # done
 
-    archive_dist_dir "snippets"
+    # archive_dist_dir "snippets"
 }
 
 extract_apiref() {
     APIREF_DIR="$DIST_DIR/api-reference"
     rm -rf "$APIREF_DIR"
 
-    npm_install
-    npm run typedoc
+    # npm_install
+    # npm run typedoc
+    npm run typedoc # -- "--out $DIST_DIR/apiref"
+    # --includeDeclarations --name NativeScript --theme ./node_modules/nativescript-typedoc-theme --excludeExternals --externalPattern **/+(tns-core-modules|module).d.ts"
+
+    # npx typedoc
 
     mv "$DIST_DIR/apiref" "$APIREF_DIR"
     archive_dist_dir "api-reference"
@@ -51,6 +56,6 @@ rm -rf "$TARGET_DIR"
 mkdir -p "$TARGET_DIR"
 
 if [ "${BASH_SOURCE[0]}" == "$0" ] ; then
-    extract_snippets
+    # extract_snippets
     extract_apiref
 fi

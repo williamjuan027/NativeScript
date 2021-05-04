@@ -1,0 +1,53 @@
+{
+	"compilerOptions": {
+		"noEmitOnError": true,
+		"noEmitHelpers": true,
+		// "target": "es5",
+		// "module": "commonjs",
+		"target": "ES2017",
+		"module": "esnext",
+		"declaration": false,
+		"noImplicitAny": false,
+		"noImplicitUseStrict": true,
+		"experimentalDecorators": true,
+		"skipLibCheck": true, // TODO: this feels super hacky but removes some of the errors
+		"skipDefaultLibCheck": true, // TODO: this feels super hacky but removes some of the errors
+
+		// "lib": [
+		//     "es6",
+		//     "dom"
+		// ]
+		"lib": ["es2017", "dom"],
+		"moduleResolution": "node"
+	},
+	"include": ["packages/core/**/*.d.ts"],
+	"exclude": [
+		"node_modules",
+		"packages/core/node_modules",
+		"packages/core/platforms/*",
+		"packages/core/__tests__"
+
+		// "packages/core/references.d.ts",
+		// "packages/core/ui/frame/transition-definitions.android.d.ts",
+		// "packages/core/index.d.ts",
+		// "packages/core/**/*+(index|.spec|.e2e).ts"
+
+		// "packages/core/ui/index.ts",
+		// "packages/core/ui/layouts/index.d.ts",
+
+		// test excludes
+		// "packages/core/http",
+		// "packages/core/index.ts",
+		// "packages/core/file-system/index.d.ts",
+		// "packages/core/profiling/index.d.ts",
+		// "packages/core/globals"
+	],
+	"typedocOptions": {
+		"out": "bin/dist/apiref",
+		// "includeDeclarations": true, // typedoc deosn't like this
+		"name": "NativeScript",
+		"theme": "./node_modules/nativescript-typedoc-theme"
+		// "excludeExternals": true,
+		// "externalPattern": "**/+(tns-core-modules|module).d.ts"
+	}
+}
