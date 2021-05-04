@@ -6,7 +6,8 @@ import { RootLayout, RootLayoutOptions, ShadeCoverOptions, TransitionAnimation }
 import { Animation } from '../../animation';
 
 @CSSType('RootLayout')
-export class RootLayoutBase extends GridLayout {
+// export class RootLayoutBase extends GridLayout {
+export class RootLayoutBase extends RootLayoutBaseview {
 	private shadeCover: View;
 	private staticChildCount: number;
 	private popupViews: { view: View; options: RootLayoutOptions }[] = [];
@@ -344,6 +345,8 @@ export class RootLayoutBase extends GridLayout {
 			resolve();
 		});
 	}
+
+	protected _blockPassThroughTapEvents(view: View) {}
 
 	protected _bringToFront(view: View) {}
 

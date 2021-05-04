@@ -24,6 +24,9 @@ import { ViewBase as ViewBaseDefinition } from '.';
 
 let domNodeModule: typeof dnm;
 
+// TODO: temp workaround for typedoc
+declare let org: any;
+
 function ensuredomNodeModule(): void {
 	if (!domNodeModule) {
 		domNodeModule = require('../../../debugger/dom-node');

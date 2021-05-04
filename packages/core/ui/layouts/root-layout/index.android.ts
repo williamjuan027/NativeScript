@@ -10,6 +10,19 @@ export class RootLayout extends RootLayoutBase {
 		super();
 	}
 
+	// protected _blockPassThroughTapEvents(view: View) {
+	// 	if (!view.nativeViewProtected.hasOnClickListeners()) {
+	// 		// view.nativeViewProtected.setClickable(true);
+	// 		(<android.view.View>view.nativeViewProtected).setOnTouchListener(
+	// 			new android.view.View.OnTouchListener({
+	// 				onTouch: function (view, event) {
+	// 					return true;
+	// 				},
+	// 			})
+	// 		);
+	// 	}
+	// }
+
 	protected _bringToFront(view: View) {
 		(<android.view.View>view.nativeViewProtected).bringToFront();
 	}
