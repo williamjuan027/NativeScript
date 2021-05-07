@@ -10,7 +10,7 @@
       <!-- Root layout demo -->
       <RootLayout height="100%" width="100%">
         <GridLayout height="100%" backgroundColor="#ededed">
-          <Label verticalAlignment="center" textAlignment="center" fontWeight="bold" color="#333" text="ROOT LAYOUT CONTENT"></Label>
+          <Label verticalAlignment="center" backgroundColor="red" padding="50" textAlignment="center" tap="{{ backgroundTap }}" fontWeight="bold" color="#333" text="ROOT LAYOUT CONTENT" />
         </GridLayout>
       </RootLayout>
       </AbsoluteLayout>
@@ -19,25 +19,25 @@
       <StackLayout row="1">
         <ScrollView height="100%">
           <StackLayout padding="20" class="controls">
-            <Label text="ORANGE"></Label>
+            <Label text="ORANGE" />
             <FlexboxLayout flexDirection="row" justifyContent="space-between">
-              <Button flexGrow="1" text="open" tap="{{ open }}" popupIndex="0"/>
-              <Button flexGrow="1" text="front" tap="{{ bringToFront }}" popupIndex="0"/>
-              <Button flexGrow="1" text="close" tap="{{ close }}" popupIndex="0"/>
+              <Button flexGrow="1" text="open" tap="{{ open }}" popupIndex="0" />
+              <Button flexGrow="1" text="front" tap="{{ bringToFront }}" popupIndex="0" />
+              <Button flexGrow="1" text="close" tap="{{ close }}" popupIndex="0" />
             </FlexboxLayout>
 
-            <Label text="NAVY"></Label>
+            <Label text="NAVY" />
             <FlexboxLayout flexDirection="row" justifyContent="space-between">
-              <Button flexGrow="1" text="open" tap="{{ open }}" popupIndex="1"/>
-              <Button flexGrow="1" text="front" tap="{{ bringToFront }}" popupIndex="1"/>
-              <Button flexGrow="1" text="close" tap="{{ close }}" popupIndex="1"/>
+              <Button flexGrow="1" text="open" tap="{{ open }}" popupIndex="1" />
+              <Button flexGrow="1" text="front" tap="{{ bringToFront }}" popupIndex="1" />
+              <Button flexGrow="1" text="close" tap="{{ close }}" popupIndex="1" />
             </FlexboxLayout>
 
-            <Label text="GRAY"></Label>
+            <Label text="GRAY" />
             <FlexboxLayout flexDirection="row" justifyContent="space-between">
-              <Button flexGrow="1" text="open" tap="{{ open }}" popupIndex="2"/>
-              <Button flexGrow="1" text="front" tap="{{ bringToFront }}" popupIndex="2"/>
-              <Button flexGrow="1" text="close" tap="{{ close }}" popupIndex="2"/>
+              <Button flexGrow="1" text="open" tap="{{ open }}" popupIndex="2" />
+              <Button flexGrow="1" text="front" tap="{{ bringToFront }}" popupIndex="2" />
+              <Button flexGrow="1" text="close" tap="{{ close }}" popupIndex="2" />
             </FlexboxLayout>
 
           </StackLayout>

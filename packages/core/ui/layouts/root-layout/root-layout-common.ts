@@ -4,6 +4,7 @@ import { CSSType, View } from '../../core/view';
 import { GridLayout } from '../grid-layout';
 import { RootLayout, RootLayoutOptions, ShadeCoverOptions, TransitionAnimation } from '.';
 import { Animation } from '../../animation';
+import { RootLayoutBaseview } from './baseview/baseview';
 
 @CSSType('RootLayout')
 // export class RootLayoutBase extends GridLayout {
@@ -66,6 +67,7 @@ export class RootLayoutBase extends RootLayoutBaseview {
 					});
 				}
 			} catch (ex) {
+				console.log('ex', ex);
 				if (Trace.isEnabled()) {
 					Trace.write(`Error opening popup (${view}): ${ex}`, Trace.categories.Layout, Trace.messageType.error);
 				}

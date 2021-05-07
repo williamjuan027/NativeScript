@@ -10,11 +10,11 @@ export class RootLayoutModel extends Observable {
 		{
 			view: this.getPopup('#EA5936', 110, -30),
 			options: {
-				shadeCover: {
-					color: '#FFF',
-					opacity: 0.7,
-					tapToClose: true,
-				},
+				// shadeCover: {
+				// 	color: '#FFF',
+				// 	opacity: 0.7,
+				// 	tapToClose: true,
+				// },
 				animation: {
 					enterFrom: {
 						opacity: 0,
@@ -116,6 +116,13 @@ export class RootLayoutModel extends Observable {
 		layout.marginLeft = offset;
 		layout.backgroundColor = color;
 		layout.borderRadius = 10;
+		// layout.on('tap', () => {
+		// 	console.log('tap', color);
+		// });
 		return layout;
+	}
+
+	backgroundTap(): void {
+		console.log('backgroundtap');
 	}
 }
