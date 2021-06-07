@@ -12,6 +12,7 @@ export class RootLayout extends GridLayout {
 export function getRootLayout(): RootLayout;
 
 export interface RootLayoutOptions {
+	atIndex?: number;
 	shadeCover?: ShadeCoverOptions;
 	animation?: {
 		enterFrom?: TransitionAnimation;

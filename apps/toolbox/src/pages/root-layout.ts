@@ -10,6 +10,7 @@ export class RootLayoutModel extends Observable {
 		{
 			view: this.getPopup('#EA5936', 110, -30),
 			options: {
+				atIndex: 0,
 				shadeCover: {
 					color: '#FFF',
 					opacity: 0.7,
@@ -37,6 +38,7 @@ export class RootLayoutModel extends Observable {
 		{
 			view: this.getPopup('#232652', 110, 0),
 			options: {
+				atIndex: 1,
 				shadeCover: {
 					color: 'pink',
 					opacity: 0.7,

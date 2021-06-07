@@ -30,23 +30,32 @@ export class RootLayoutBase extends GridLayout {
 						Trace.write(`${view} has already been added`, Trace.categories.Layout);
 					}
 				} else {
-					// keep track of the views locally to be able to use their options later
-					this.popupViews.push({ view: view, options: options });
-
 					// only insert 1 layer of shade cover (don't insert another one if already present)
 					if (options?.shadeCover && !this.shadeCover) {
 						this.shadeCover = this.createShadeCover(options.shadeCover);
 						// insert shade cover at index right above the first layout
 						this.insertChild(this.shadeCover, this.staticChildCount + 1);
-					}
-
-					// overwrite current shadeCover options if topmost popupview has additional shadeCover configurations
-					else if (options?.shadeCover && this.shadeCover) {
+					} else if (options?.shadeCover && this.shadeCover && (!(options?.atIndex >= 0) || options?.atIndex === this.popupViews.length)) {
+						// overwrite current shadeCover options if topmost popupview has additional shadeCover configurations
 						this.updateShadeCover(this.shadeCover, options.shadeCover);
 					}
 
 					view.opacity = 0; // always begin with view invisible when adding dynamically
-					this.insertChild(view, this.getChildrenCount() + 1);
+
+					if (options?.atIndex >= 0 && options?.atIndex < this.popupViews.length) {
+						// take into account the base layer so the dynamic view don't get added below the base view
+						let index = options.atIndex + 1;
+						if (this.getShadeCover()) {
+							index += 1;
+						}
+						this.insertChild(view, index);
+						// keep track of the views locally to be able to use their options later
+						this.popupViews.splice(options.atIndex, 0, { view: view, options: options });
+					} else {
+						this.insertChild(view, this.getChildrenCount() + 1);
+						// keep track of the views locally to be able to use their options later
+						this.popupViews.push({ view: view, options: options });
+					}
 
 					setTimeout(() => {
 						// only apply initial state and animate after the first tick - ensures safe areas and other measurements apply correctly
